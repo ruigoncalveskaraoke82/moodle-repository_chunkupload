@@ -1,0 +1,70 @@
+.repository_chunkupload-dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+    width: 100%;
+    min-height: 9rem;
+    padding: 1rem;
+    border: 2px dashed #8f959e;
+    border-radius: .5rem;
+    background-color: #f8f9fa;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .15s, border-color .15s;
+}
+
+.repository_chunkupload-dropzone:hover,
+.repository_chunkupload-dropzone:focus-within,
+.repository_chunkupload-dropzone.repository_chunkupload-dragover {
+    border-color: #0f6cbf;
+    background-color: #e7f1fa;
+}
+
+.repository_chunkupload-dropzone:focus-within {
+    outline: 2px solid #0f6cbf;
+    outline-offset: 2px;
+}
+
+.repository_chunkupload-dropzone.repository_chunkupload-disabled {
+    cursor: default;
+    opacity: .6;
+}
+
+.repository_chunkupload-icon .icon {
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.repository_chunkupload-list {
+    max-height: 16rem;
+    overflow-y: auto;
+}
+
+.repository_chunkupload-item {
+    padding: .5rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.repository_chunkupload-item:last-child {
+    border-bottom: 0;
+}
+
+.repository_chunkupload-item .repository_chunkupload-name {
+    overflow-wrap: anywhere;
+}
+
+.repository_chunkupload-item .progress {
+    height: .5rem;
+}
+
+.repository_chunkupload-item.repository_chunkupload-failed .progress-bar {
+    background-color: #ca3120;
+}
+
+.repository_chunkupload-item.repository_chunkupload-done .progress-bar {
+    background-color: #357a32;
+}

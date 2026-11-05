@@ -1,0 +1,59 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+}}
+{{!
+    @template repository_chunkupload/uploadform
+
+    Upload form shown by the file picker. The elements with the "fp-" classes are required by the
+    file picker; the visible upload area, list and button are driven by repository_chunkupload/uploader.
+
+    Example context (json):
+    {}
+}}
+<div class="fp-upload-form repository_chunkupload-root" data-region="repository_chunkupload">
+    <div class="fp-content-center">
+        <form enctype="multipart/form-data" method="POST" class="form" novalidate>
+            <div class="fp-formset">
+                <div class="fp-file d-none" aria-hidden="true">
+                    <label>{{#str}}attachment, repository{{/str}}</label>
+                    <input type="file" tabindex="-1">
+                </div>
+                <label class="repository_chunkupload-dropzone mb-2" data-region="dropzone">
+                    <input type="file" class="repository_chunkupload-input sr-only visually-hidden" data-region="fileinput">
+                    <span class="repository_chunkupload-icon" aria-hidden="true">{{#pix}}i/upload, core{{/pix}}</span>
+                    <span class="repository_chunkupload-prompt" data-region="prompt">{{#str}}dropfiles, repository_chunkupload{{/str}}</span>
+                    <span class="repository_chunkupload-limits small text-muted" data-region="limits"></span>
+                </label>
+                <ul class="repository_chunkupload-list list-unstyled mb-3" data-region="list" aria-live="polite"></ul>
+                <div class="fp-saveas d-none">
+                    <label>{{#str}}saveas, repository{{/str}}</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="fp-setauthor mb-3">
+                    <label>{{#str}}author, repository{{/str}}</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="fp-setlicense mb-3">
+                    {{>core/filemanager_chooselicense}}
+                </div>
+            </div>
+        </form>
+        <div class="mdl-align">
+            <button type="button" class="btn btn-primary" data-action="upload" disabled>{{#str}}uploadbutton, repository_chunkupload{{/str}}</button>
+            <button type="button" class="fp-upload-btn d-none" tabindex="-1" aria-hidden="true"></button>
+        </div>
+    </div>
+</div>
